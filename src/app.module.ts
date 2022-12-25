@@ -5,7 +5,7 @@ import { ProductsModule } from './products/products.module';
   imports: [
     ProductsModule,
     MongooseModule.forRoot(
-      'mongodb+srv://joaperi:34232114jeova@cluster0.osn9cpc.mongodb.net/test',
+      'mongodb+srv://joaperi:34232114jeova@cluster0.lz7zbqg.mongodb.net/test',
     ),
   ],
   controllers: [],
