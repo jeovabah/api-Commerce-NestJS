@@ -4,11 +4,6 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  // how to disable CORS
-  app.enableCors({
-    origin: '*',
-    credentials: false,
-  });
   await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
