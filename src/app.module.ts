@@ -7,7 +7,7 @@ import { UserModule } from './users/user.module';
     ProductsModule,
     UserModule,
     MongooseModule.forRoot(
-      'mongodb+srv://joaperi:34232114jeova@cluster0.lz7zbqg.mongodb.net/test',
+      'mongodb+srv://joaperi:34232114jeova@cluster0.v7ogoq4.mongodb.net/test',
     ),
   ],
   controllers: [],
