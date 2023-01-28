@@ -9,13 +9,13 @@ async function bootstrap() {
     origin: '*',
     credentials: true,
   });
-  app.useGlobalPipes(
-    new ValidationPipe({
-      transform: true,
-      whitelist: true,
-      forbidNonWhitelisted: true,
-    }),
-  );
+  // app.useGlobalPipes(
+  //   new ValidationPipe({
+  //     transform: true,
+  //     whitelist: true,
+  //     forbidNonWhitelisted: true,
+  //   }),
+  // );
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
   await app.listen(process.env.PORT || 3000);
