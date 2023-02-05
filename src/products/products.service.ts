@@ -35,6 +35,33 @@ export class ProductsService {
     }
   }
 
+  buy(id: string) {
+    try {
+      this.productModel.findByIdAndUpdate(
+        {
+          _id: id,
+        },
+        { $inc: { quantity: -1 } },
+      );
+      return this.createOrder(id);
+    } catch (error) {
+      console.log(JSON.stringify(error));
+    }
+  }
+
+  async createOrder(id: string) {
+    try {
+      // create a new order with the product id
+      const order = new this.productModel({
+        product_id: id,
+        product_name: (await this.findOne(id)).name,
+      });
+      return order.save();
+    } catch (error) {
+      console.log(JSON.stringify(error));
+    }
+  }
+
   update(id: string, updateProductDto: UpdateProductDto) {
     return this.productModel.findByIdAndUpdate(
       {

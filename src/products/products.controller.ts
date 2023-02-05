@@ -21,6 +21,11 @@ export class ProductsController {
     return this.productsService.create(createProductDto);
   }
 
+  @Post('buy')
+  buy(@Param('id') id: string) {
+    return this.productsService.buy(id);
+  }
+
   @Get()
   findAll() {
     return this.productsService.findAll();
